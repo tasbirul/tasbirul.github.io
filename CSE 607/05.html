@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+const numbers = ["Red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = "“The colours of the rainbow are: " + txt.replace(/,(?=\s*$)/,'') + ".”";
+
+function myFunction(value, index, array) {
+  txt += value + ", "; 
+}
+</script>
+</body>
+</html>

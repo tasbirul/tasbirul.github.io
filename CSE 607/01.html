@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>World University of Bangladesh</title>
+    </head>
+    <body>
+    	<p id="old" style="font-size: 20px; text-align: center;"></p>
+        <script>
+            var date_of_founded = new Date("02/26/2003");
+            var get_month_diff  = Date.now() - date_of_founded.getTime();
+            var age_dt          = new Date(get_month_diff);
+            var year            = age_dt.getUTCFullYear();
+            var founded_years   = Math.abs(year - 1970);
+            document.getElementById('old').innerHTML ="World University of Bangladesh is "+ founded_years + " years old.";
+        </script>
+    </body>
+</html>
+
+<!--https://www.javatpoint.com/calculate-age-using-javascript -->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+    </head>
+    <body> 
+        <style type="text/css">
+            body{font-size: 14px; font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Arial, sans-serif;}
+            .content{margin: 0 auto; width: 780px;padding-top: 40px;}
+            input[type="number"]{font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Arial, sans-serif;padding: 5px; border-radius: 3px; border: 1px solid #000000;}
+            button {font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Arial, sans-serif;}
+            #set{font-size: 25px;}
+        </style>
+        <div class="content">
+
+            <table>
+                <tr>
+                    <td>Number of bread: </td><td><input type="number" id="bread" required="1"></td>
+                </tr>
+                <tr>
+                    <td> Number of cheese:</td><td><input type="number" id="cheese" required="1"></td>
+                </tr>
+                <tr>
+                    <td></td><td><button onclick="possible_sandwich()">Calculate</button></td>
+                </tr>
+            </table>
+         <br>
+        <br>
+        
+        <p id="set"></p>
+        </div>
+
+        <script>
+            function possible_sandwich() {
+                var bread = document.getElementById("bread").value;
+                var cheese = document.getElementById("cheese").value;
+                if (bread >= 0 && cheese >= 0 && bread != "" && cheese != "") {
+                bread_pair = Math.floor(bread / 2);
+                if (bread_pair <= cheese) {
+                    sandwiches = bread_pair;
+                } else {
+                    sandwiches = cheese;
+                }
+                document.getElementById("set").innerHTML = "Number of sandwiches is " + sandwiches;
+            }else{
+                alert("Invalid input!");
+            }
+        }
+        </script>
+    </body>
+</html>
