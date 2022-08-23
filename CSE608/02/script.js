@@ -3,17 +3,20 @@ $('form').submit(function (event) {
     convertInputDegree()
 });
 
+
 $('#inputDegree').on('input', () => convertInputDegree());
 $('#selectInputDegreeType').change(() => convertInputDegree());
 $('#selectConversionType').change(() => convertInputDegree());
 
 
 function convertInputDegree() {
+
     let inputDegree = parseInt($('#inputDegree').val());
     let selectInputDegreeType = $('#selectInputDegreeType').val();
     let conversionType = $('#selectConversionType').val();
 
     let resultValue = "";
+
     switch (selectInputDegreeType) {
 
         case "C":
@@ -23,6 +26,11 @@ function convertInputDegree() {
         case "F":
             resultValue = fTo(inputDegree, conversionType);
             break;
+
+        case "K":
+            resultValue = kTo(inputDegree, conversionType);
+            break;
+
     }
 
     if (isNaN(inputDegree)) {
@@ -30,7 +38,11 @@ function convertInputDegree() {
         return;
     }
 
+    // To update the Degree Unit
     $('#convertedUnit').text(conversionType)
+
+
+    // To update the Degree Value
     $('#convertedDegree').text(resultValue.toFixed(2));
 
 }
@@ -47,6 +59,10 @@ function fTo(inputDegreeValue, conversionDegreeType) {
         case 'C':
             temperature = eval((inputDegreeValue - 32) * (5 / 9));
             break;
+        case 'K':
+
+            temperature = eval((inputDegreeValue + 459.67) * (5 / 9));
+            break;
 
     }
     return temperature;
@@ -55,6 +71,7 @@ function fTo(inputDegreeValue, conversionDegreeType) {
 
 
 function cTo(inputDegreeValue, conversionDegreeType) {
+
 
     let temperature = '';
 
@@ -67,7 +84,10 @@ function cTo(inputDegreeValue, conversionDegreeType) {
             temperature = eval((inputDegreeValue * (9 / 5)) + 32);
             break;
 
+
     }
 
     return temperature;
 }
+
+
