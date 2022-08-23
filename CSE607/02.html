@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <input type="radio" name="season" id="Minhajul" value="Minhajul"> Md. Minhajul Kabir <br>
+        <input type="radio" name="season" id="Tanjimul" value="Tanjimul"> Md. Tanjimul Islam <br>
+        <input type="radio" name="season" id="rainy" value="Rainy"> Rifal Ahmed <br>
+        <input type="radio" name="season" id="rainy" value="Ashikur"> Ashikur Rahman <br>
+        <input type="radio" name="season" id="rainy" value="Asraful"> Asraful Islam <br>
+        <input type="radio" name="season" id="rainy" value="Redoy"> Redoy Roy <br>
+        <input type="radio" name="season" id="rainy" value="Riad"> Riad Hossain <br>
+        <input type="radio" name="season" id="rainy" value="Masud"> Masud Rana <br>
+        <input type="radio" name="season" id="rainy" value="Rahma"> Rahma Alam <br>
+        <input type="radio" name="season" id="autumn" value="Autumn"> Autumn <br>
+        <br>
+        <button type="button" onclick=" checkButton()"> Submit </button>
+    </body>
+    <script>
+        function student(name, batch, earned_cr, total_cr_houre, gpa) {
+            this.name = name;
+            this.batch = batch;
+            this.earned_cr = earned_cr;
+            this.total_cr_houre = total_cr_houre;
+            this.gpa = gpa;
+        }
+        const Minhajul = new student("Md. Minhajul Kabir", "53/A", 72, 142, 3.4);
+        const Tanjimul = new student("Md. Tanjimul Islam", "53/A", 72, 142, 3.0);
+        const Rainy = new student("Rifal Ahmed", "53/A", 72, 142, 3.2);
+        const Ashikur = new student("Ashikur Rahman", "53/A", 72, 142, 3.7);
+        const Asraful = new student("Asraful Islam", "53/A", 72, 142, 3.3);
+        const Redoy = new student("Redoy Roy", "53/A", 72, 142, 3.5);
+        const Riad = new student("Riad Hossain", "53/A", 72, 142, 3.6);
+        const Masud = new student("Masud Rana", "53/A", 72, 142, 3.8);
+        const Rahma = new student("Rahma Alam", "53/A", 72, 142, 3.1);
+        const Autumn = new student("Autumn", "53/A", 72, 142, 3.0);
+
+        function checkButton() {
+            var getSelectedValue = document.querySelector('input[name="season"]:checked');
+            if (getSelectedValue != null) {
+                alert("Name: " + Minhajul.name + " | Batch: " + Minhajul.batch + " | Earned Credits: " + Minhajul.earned_cr + " | Total Credit Hours attempted: " + Minhajul.total_cr_houre + " | GPA: " + Minhajul.gpa);
+            }
+        }
+    </script>
+</html>
